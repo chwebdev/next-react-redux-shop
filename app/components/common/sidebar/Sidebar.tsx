@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { useGetCategoriesQuery } from '@/app/store/category/category.api'
-import Menu from '@/app/components/ui/menu/Menu'
+import Menu from './menu/Menu'
 import Sidebar from '@/app/components/ui/sidebar/Sidebar'
 
 const SidebarHome: FC = () => {
