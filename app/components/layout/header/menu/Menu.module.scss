@@ -1,0 +1,19 @@
+.menu {
+	@apply text-sm font-semibold;
+
+	ul {
+		@apply lg:flex;
+
+		li {
+			@apply lg:mr-7;
+
+			&:last-child {
+				@apply mr-0 mb-0;
+			}
+
+			@media (max-width: 991px) {
+				@apply mb-5;
+			}
+		}
+	}
+}

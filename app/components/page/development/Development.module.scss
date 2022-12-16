@@ -1,0 +1,11 @@
+.wrapper {
+	@apply flex flex-col items-center justify-center h-full;
+
+	h1 {
+		@apply my-3 text-center;
+	}
+}
+
+.icon {
+	@apply text-7xl;
+}

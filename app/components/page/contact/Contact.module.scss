@@ -1,0 +1,17 @@
+.wrapper {
+	h1 {
+		@apply mb-5 pb-5 text-xl border-b-2 border-gray-100;
+	}
+}
+
+.case {
+	@apply mb-3;
+
+	a {
+		@apply inline-block ml-2 underline text-blue-600 hover:text-blue-800;
+	}
+
+	&:last-child {
+		@apply mb-0;
+	}
+}

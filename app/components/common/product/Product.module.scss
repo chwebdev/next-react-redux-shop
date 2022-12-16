@@ -1,0 +1,57 @@
+.product {
+	@apply grid gap-y-5;
+
+	.imageWrapper {
+		@apply relative block overflow-hidden;
+		padding: 0 0 90% 0;
+
+		.image {
+			@apply object-contain transition duration-500 ease-in-out hover:scale-125 will-change-transform;
+		}
+	}
+
+	.text {
+		@apply overflow-hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.description {
+		@apply mt-1 text-gray-500;
+		-webkit-line-clamp: 2;
+	}
+
+	.title {
+		@apply text-gray-700;
+		-webkit-line-clamp: 1;
+	}
+
+	.navigation {
+		@apply flex justify-between text-sm;
+	}
+
+	.price {
+		@apply font-medium text-gray-900 ml-3;
+	}
+}
+
+.counter {
+	.wrapper {
+		@apply flex;
+	}
+
+	.value {
+		@apply px-2;
+	}
+
+	.button {
+		width: 40px;
+		height: 40px;
+	}
+
+	.section {
+		@apply mr-2;
+	}
+}

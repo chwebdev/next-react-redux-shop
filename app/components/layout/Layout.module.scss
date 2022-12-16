@@ -1,0 +1,15 @@
+.primary {
+	@apply grid gap-6;
+
+	@media (max-width: 991px) {
+		grid-template-rows: auto 1fr;
+	}
+
+	@media (min-width: 991px) {
+		grid-template-columns: 280px auto;
+	}
+}
+
+.main {
+	@apply container mx-auto px-4 py-4 lg:py-8;
+}

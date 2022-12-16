@@ -1,0 +1,19 @@
+.navigation {
+	@apply text-xl;
+
+	ul {
+		@apply flex;
+	}
+
+	li {
+		@apply mr-7;
+
+		&:first-child {
+			@apply pr-7 border-r mr-7;
+		}
+
+		&:last-child {
+			@apply mr-0;
+		}
+	}
+}

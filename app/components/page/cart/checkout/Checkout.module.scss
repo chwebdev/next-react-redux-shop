@@ -1,0 +1,18 @@
+.checkout {
+	@apply p-5 bg-gray-100 rounded-lg;
+
+	nav {
+		@apply border-t-2 border-t-gray-200 pt-5 mt-5;
+		h3 {
+			@apply text-xl text-stone-700;
+		}
+
+		li {
+			@apply flex justify-between text-sm text-stone-600 mt-3;
+		}
+	}
+}
+
+.button {
+	@apply w-full;
+}

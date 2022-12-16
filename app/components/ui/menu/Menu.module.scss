@@ -1,0 +1,26 @@
+.menu {
+	.header {
+		@apply font-medium text-gray-900 pb-3 pt-3 lg:pt-0 border-b-2 border-t-2 lg:border-t-0 border-gray-100 flex items-center justify-between lg:block;
+
+		.button {
+			@apply block lg:hidden;
+		}
+	}
+
+	.loading {
+		@apply h-20 animate-pulse bg-slate-100 rounded col-span-2;
+	}
+
+	.body {
+		@apply mt-3;
+		&:not(.active) {
+			@media (max-width: 991px) {
+				display: none;
+			}
+		}
+	}
+
+	.list {
+		@apply capitalize;
+	}
+}

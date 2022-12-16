@@ -1,0 +1,15 @@
+.notFound {
+	@apply flex items-center justify-center h-full text-3xl opacity-50;
+}
+
+.wrapper {
+	@apply grid gap-x-8 gap-y-5;
+
+	@media (min-width: 1024px) {
+		grid-template-columns: 1fr minmax(0, 450px);
+	}
+
+	& > * {
+		align-self: start;
+	}
+}

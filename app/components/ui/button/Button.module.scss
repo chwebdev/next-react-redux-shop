@@ -1,0 +1,16 @@
+.button {
+	@apply inline-flex justify-center rounded-lg text-sm font-semibold bg-slate-900 text-white hover:bg-slate-700;
+
+	&:disabled,
+	&[disabled] {
+		@apply bg-slate-700;
+	}
+}
+
+.s {
+	@apply py-2.5 px-4;
+}
+
+.m {
+	@apply p-4;
+}

@@ -1,0 +1,71 @@
+.list {
+	@apply grid gap-y-5 md:gap-y-8;
+}
+
+.product {
+	@apply grid gap-y-5 gap-x-5 border-b-2 border-gray-100 pb-5;
+
+	@media (min-width: 768px) {
+		grid-template-columns: minmax(0, 220px) 1fr;
+	}
+}
+
+.imageWrapper {
+	@apply relative block;
+	padding: 0 0 90% 0;
+
+	.image {
+		@apply object-contain;
+	}
+}
+
+.text {
+	@apply overflow-hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.description {
+	@apply text-gray-500;
+	-webkit-line-clamp: 2;
+}
+
+.title {
+	@apply text-gray-700;
+	-webkit-line-clamp: 1;
+}
+
+.navigation {
+	@apply grid text-sm gap-y-3 self-start;
+}
+
+.price {
+	@apply font-medium text-gray-900;
+}
+
+.counter {
+	@apply flex;
+
+	.wrapper {
+		@apply mr-5;
+	}
+
+	.value {
+		@apply px-2;
+	}
+
+	.button {
+		width: 40px;
+		height: 40px;
+	}
+
+	.section {
+		@apply mr-2;
+	}
+
+	.delete {
+		@apply text-xl;
+	}
+}
