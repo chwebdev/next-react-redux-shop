@@ -3,7 +3,7 @@ import { renderWithProviders } from '@/app/test/helpers/renderWithProviders'
 import { server } from '@/app/test/mocks/api/server'
 import { rest } from 'msw'
 import { screen } from '@testing-library/react'
-import { API_PRODUCT, API_URL } from '@/app/utils/consts'
+import { API_CATEGORY_PRODUCTS, API_URL } from '@/app/utils/consts'
 import {
 	mockProductData,
 	mockProductsData
@@ -14,14 +14,17 @@ import ProductList from '../ProductList'
 
 jest.mock('next/router', () => ({
 	useRouter: () => ({
-		push: jest.fn()
+		push: jest.fn(),
+		query: {
+			id: 'test'
+		}
 	})
 }))
 
 describe('Initializing ProductList', () => {
 	test('Should render empty data', async () => {
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json([]))
 			})
 		)
@@ -35,7 +38,7 @@ describe('Initializing ProductList', () => {
 
 	test('Should render data and without button more if result less limit', async () => {
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json([mockProductData]))
 			})
 		)
@@ -55,7 +58,7 @@ describe('Initializing ProductList', () => {
 
 	test('Should render with data and button more if result equal limit', async () => {
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json(mockProductsData))
 			})
 		)
@@ -70,7 +73,7 @@ describe('Initializing ProductList', () => {
 	test('Should render count product in cart if add product', async () => {
 		user.setup()
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json(mockProductsData))
 			})
 		)
@@ -91,7 +94,7 @@ describe('Initializing ProductList', () => {
 	test('Should render count product in cart if increment product', async () => {
 		user.setup()
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json(mockProductsData))
 			})
 		)
@@ -117,7 +120,7 @@ describe('Initializing ProductList', () => {
 	test('Should render count product in cart if decrement product', async () => {
 		user.setup()
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json(mockProductsData))
 			})
 		)
@@ -148,7 +151,7 @@ describe('Initializing ProductList', () => {
 	test('Should remove count product if product have min count', async () => {
 		user.setup()
 		server.use(
-			rest.get(`${API_URL}/${API_PRODUCT}`, (req, res, ctx) => {
+			rest.get(`${API_URL}/${API_CATEGORY_PRODUCTS}/test`, (req, res, ctx) => {
 				return res(ctx.json(mockProductsData))
 			})
 		)
