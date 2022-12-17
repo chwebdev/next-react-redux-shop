@@ -5,7 +5,6 @@ import { mockProductsData } from '@/app/test/mocks/api/data/product'
 
 import ProductList from '../ProductList'
 import user from '@testing-library/user-event'
-import Cart from '@/app/components/page/cart/Cart'
 
 jest.mock('next/router', () => ({
 	useRouter: () => ({
@@ -101,9 +100,10 @@ describe('Initializing ProductList', () => {
 
 	test('Should remove element in cart if click button delete', async () => {
 		user.setup()
-		renderWithProviders(<Cart />, {
+		renderWithProviders(<ProductList />, {
 			preloadedState
 		})
+
 		const buttonDeleteElement = screen.getAllByRole('button', {
 			name: 'button-delete-cart'
 		})
