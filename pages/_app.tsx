@@ -14,7 +14,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 		<Provider store={store}>
 			<NextNProgress color='gray' />
 			<PersistGate loading={null} persistor={persistor}>
-				<Component {...pageProps} />
+				{() => <Component {...pageProps} />}
 			</PersistGate>
 			<ReduxToastr
 				preventDuplicates
