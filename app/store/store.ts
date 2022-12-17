@@ -18,7 +18,7 @@ import storage from 'redux-persist/lib/storage'
 const persistConfig = {
 	key: 'root',
 	storage,
-	blacklist: [categoryApi.reducerPath, productApi.reducerPath]
+	whitelist: ['cart']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -1,10 +1,14 @@
 import React, { FC } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FiUser } from 'react-icons/fi'
-import Cart from './cart/Cart'
 import styles from './Navigation.module.scss'
 import Link from 'next/link'
 import { ROUTE_DEVELOPMENT } from '@/app/utils/consts'
+import dynamic from 'next/dynamic'
+
+const DynamicCart = dynamic(() => import('./cart/Cart'), {
+	ssr: false
+})
 
 const Navigation: FC = () => {
 	return (
@@ -21,7 +25,7 @@ const Navigation: FC = () => {
 					</Link>
 				</li>
 				<li>
-					<Cart />
+					<DynamicCart />
 				</li>
 			</ul>
 		</nav>

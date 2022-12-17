@@ -4,20 +4,14 @@ import { screen } from '@testing-library/react'
 
 import Cart from '../Cart'
 
-jest.mock('next/router', () => ({
-	useRouter: () => ({
-		push: jest.fn()
-	})
-}))
-
 describe('Initializing Cart', () => {
 	test('Should render without crashing', () => {
 		renderWithProviders(<Cart />)
 	})
 
-	test('Should render plug with empty data', () => {
+	test('Should render plug with empty data', async () => {
 		renderWithProviders(<Cart />)
-		const plugElement = screen.getByRole('contentinfo', {
+		const plugElement = await screen.findByRole('contentinfo', {
 			name: 'plug-empty-cart'
 		})
 

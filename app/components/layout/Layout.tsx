@@ -18,6 +18,7 @@ const Layout: FC<ILayoutProps> = ({
 			<Head>
 				<title>{`${title} | ${APP_CONFIG_NAME}`}</title>
 				<meta name='description' content={description} />
+				<link rel='shortcut icon' href='/favicon.ico' />
 			</Head>
 			<Header />
 			<main
