@@ -7,6 +7,7 @@ import { ROUTE_CART } from '@/app/utils/consts'
 
 const Cart: FC = () => {
 	const { cart } = useTypedSelector(state => state.cart)
+
 	return (
 		<div className={styles.cart}>
 			<Link href={ROUTE_CART} aria-label='cart'>

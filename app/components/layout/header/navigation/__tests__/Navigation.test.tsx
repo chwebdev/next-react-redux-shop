@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react'
 import Navigation from '../Navigation'
 
 describe('Initializing Cart', () => {
-	test('Should render without crashing', () => {
+	test('Should render without crashing', async () => {
 		renderWithProviders(<Navigation />)
 		const linkSearchElement = screen.getByRole('link', {
 			name: 'search'
@@ -11,7 +11,7 @@ describe('Initializing Cart', () => {
 		const linkProfileElement = screen.getByRole('link', {
 			name: 'profile'
 		})
-		const linkCartElement = screen.getByRole('link', {
+		const linkCartElement = await screen.findByRole('link', {
 			name: 'cart'
 		})
 
