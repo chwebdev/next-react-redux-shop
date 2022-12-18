@@ -1,0 +1,16 @@
+.wrapper {
+	@apply grid gap-x-8 gap-y-5;
+
+	@media (min-width: 1024px) {
+		grid-template-columns: 1fr minmax(0, 600px);
+	}
+}
+
+.image {
+	@apply relative;
+	padding: 0 0 90% 0;
+
+	img {
+		@apply object-contain;
+	}
+}

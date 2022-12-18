@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Image from 'next/image'
 import cn from 'classnames'
 import Link from 'next/link'
-import { ROUTE_DEVELOPMENT } from '@/app/utils/consts'
+import { ROUTE_PRODUCT } from '@/app/utils/consts'
 
 import ProductCounter from './ProductCounter'
 import { IProductItemProps } from './product.interface'
@@ -11,7 +11,10 @@ import styles from './Product.module.scss'
 const ProductItem: FC<IProductItemProps> = ({ cart }) => {
 	return (
 		<div className={styles.product}>
-			<Link className={styles.imageWrapper} href={ROUTE_DEVELOPMENT}>
+			<Link
+				className={styles.imageWrapper}
+				href={`${ROUTE_PRODUCT}/${cart.item.id}`}
+			>
 				<Image
 					className={styles.image}
 					src={cart.item.image}
