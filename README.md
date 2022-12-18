@@ -1,4 +1,4 @@
-# Next React Redux Shop 1.0.0
+# Next React Redux Shop 1.5.0
 
 [See a demo here.](https://mellifluous-fairy-524185.netlify.app)
 
