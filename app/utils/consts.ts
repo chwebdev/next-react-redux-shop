@@ -4,6 +4,8 @@ export const ROUTE_DEVELOPMENT = '/development'
 
 export const ROUTE_CATEGORY = '/category'
 
+export const ROUTE_PRODUCT = '/product'
+
 export const ROUTE_CONTACT = '/contact'
 export const APP_CONFIG_NAME = 'Shop Test'
 export const API_URL = 'https://fakestoreapi.com'
